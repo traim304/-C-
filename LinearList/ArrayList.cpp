@@ -22,8 +22,8 @@ const int OK = 1;
 
 template <class ElemType>
 class Sqlist {
-    int count;
-    int maxSize;
+    int count; // The number of elems
+    int maxSize;  //Maximum number of elems
     ElemType *elems;
     
 public:
