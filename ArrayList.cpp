@@ -8,8 +8,17 @@
 
 #include <iostream>
 using namespace std;
-#define ERROR 0;
-#define OK 1;
+/*
+ C++ 语言可以用 const 来定义常量，也可以用 #define 来定义常量。但是前者比后
+ 者有更多的优点：
+ （ 1） const 常量有数据类型，而宏常量没有数据类型。编译器可以对前者进行类型安
+ 全检查。而对后者只进行字符替换，没有类型安全检查，并且在字符替换可能会
+ 产生意料不到的错误（边际效应）。
+ （ 2） 有些集成化的调试工具可以对 const 常量进行调试，但是不能对宏常量进行调试。
+ */
+
+const int ERROR = 0;
+const int OK = 1;
 
 template <class ElemType>
 class Sqlist {
@@ -153,7 +162,7 @@ void Sqlist<ElemType>:: traverse() {
 
 
 int main(int argc, const char * argv[]) {
-    int returnE;
+    int returnE; //save getElem's value
     Sqlist<int> arryList;
     arryList.init(5);
     arryList.creatList(3);
