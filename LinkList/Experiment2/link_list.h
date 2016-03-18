@@ -47,33 +47,38 @@ public:
 
 template <class MyType>
 int LinkList<MyType>::Delete(int position, MyType &e) {
-    if (position < 1) {
+    if (position < 1 || position > length) {
         cout << "---Get Position Error---";
         return ERROR;
     }
-    Node<MyType> *temPoint = new Node<MyType>;
-    temPoint = temPoint->pNext;
+    
+    Node<MyType> *temPoint = nullptr;
+    temPoint = pHead;
     
     if (position > CurPosition){
         temPoint = CurPoint;
-        for (int i = CurPosition; i != position; i++) {
+        for (int i = CurPosition; i != position-1; i++) {
             temPoint = temPoint->pNext;
         }
     }
     else
     {
-        for (int i = 1; i != position; i++) {
+        for (int i = 0; i != position-1; i++) {
             temPoint = temPoint->pNext;
         }
     }
     
-    //此时curpoint指向待删除节点的前一节点
-    Node<MyType> *p = CurPosition;      //p指向待删除的变量
-    CurPoint = CurPoint->pNext->pNext;
+    //此时tempoint指向待删除节点前一节点
+    Node<MyType> *p = temPoint->pNext;      //p指向待删除的变量
+    CurPoint = temPoint;
+    temPoint  = nullptr;
+    CurPosition = position-1;
+    CurPoint->pNext = CurPoint->pNext->pNext;
     CurPosition++;
     e = p->data;
-    delete p;
-
+    delete [] p;
+    length--;
+    return 0;
 }
 
 
@@ -84,28 +89,31 @@ int LinkList<Mytype>::Insert(int position, Mytype e) {
         cout << "---Get Position Error---";
         return ERROR;
     }
-    Node<Mytype> *temPoint = new Node<Mytype>;
+    
+    Node<Mytype> *temPoint = nullptr;
     
     if (position > CurPosition)
     {
         temPoint = CurPoint;
-        for (int i = CurPosition; i != position ; i++) {
+        for (int i = CurPosition; i != position -1 ; i++) {
             temPoint = temPoint->pNext;
         }
         
-        CurPosition = position-1;
+        CurPosition = position;
         CurPoint = temPoint;
+        temPoint = new Node<Mytype>;
         temPoint->data = e;
         temPoint->pNext = nullptr;
         temPoint->pNext = CurPoint->pNext;
         CurPoint->pNext = temPoint;
+        length++;
         return SUCCESS;
     }
     else
     {
         
-        temPoint = pHead->pNext;
-        for (int i = 1; i != position; i++) {
+        temPoint = pHead;
+        for (int i = 0; i != position-1; i++) {
             temPoint = temPoint->pNext;
         }
         
@@ -147,6 +155,9 @@ int LinkList<MyType>::Locate(MyType  e) {
 template <class MyType>
 void LinkList<MyType>::Traverse() {
     Node<MyType> *temPoint = nullptr;
+    if (length == 0) {
+        cout << "---None Nodes---" << endl;
+    }
     temPoint = pHead->pNext;
 
     while (temPoint != nullptr) {
@@ -154,10 +165,7 @@ void LinkList<MyType>::Traverse() {
         cout <<  saveData << " ";
         temPoint = temPoint->pNext;
     }
-    
-    if (temPoint == pHead) {
-        cout << "---None Nodes---" << endl;
-    }
+    delete temPoint;
 }
 
 

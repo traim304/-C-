@@ -15,8 +15,8 @@ int main(void)
     {
         LinkList<int> llist;
         llist.Init();
-        char c = '0';
-        while (c != '10')
+        int c = 0 ;
+        while (c != 12)
         {
             cout << endl << "1. 生成线性表.";
             cout << endl << "2. 显示线性表.";
@@ -34,7 +34,7 @@ int main(void)
             cin >> c;
             switch (c)
             {
-                case '1':
+                case 1:
                 {
                     int saveData = 1;       //使循环进行
                     while (saveData) {
@@ -50,13 +50,13 @@ int main(void)
                     }
                     break;
                 }
-                case '2':
+                case 2:
                 {
                     llist.Traverse();
                     break;
                 }
                     
-                case '3':
+                case 3:
                 {
                     int wantLocateData;
                     cout << "---Input A Number That You Want To Located---" << endl;
@@ -69,7 +69,7 @@ int main(void)
                     break;
                 }
                     
-                case '4':
+                case 4:
                 {
                     cout << "---Are You Sure ?---" << endl;
                     char confirm;
@@ -82,7 +82,7 @@ int main(void)
                 }
                     
                     
-                case  '5':
+                case  5:
                 {
                     cout << "---Are You Sure ?---" << endl;
                     char confirm;
@@ -95,13 +95,13 @@ int main(void)
                     
                 }
                     
-                case '6':
+                case 6:
                 {
                     cout << "---This LinkList have " << llist.Length() << " members---" << endl;
                     break;
                 }
                     
-                case '7':
+                case 7:
                 {
                     if (llist.isEmpty()) {
                         cout << "---Empty---" << endl;
@@ -114,7 +114,7 @@ int main(void)
                     }
                 }
                     
-                case '8':
+                case 8:
                 {
                     cout << "---Where Would You Like To Modify ?---" << endl;
                     int willSetPosition;
@@ -126,7 +126,7 @@ int main(void)
                     break;
                 }
                     
-                case '9':
+                case 9:
                 {
                     cout << "---Which Item That You Feel Like To Get Value ?---" << endl;
                     int willGetPosition;
@@ -140,7 +140,7 @@ int main(void)
                     break;
                 }
                     
-                case '10':
+                case 10:
                 {
                     cout << "---Where Do You Want To Insert Element?---" << endl;
                     int insertPosition;
@@ -157,6 +157,22 @@ int main(void)
                     {
                         break;
                     }
+                    
+                }
+                    
+                case 11:
+                {
+                    cout << "---Which Position Do You Want to Delete?---" << endl;
+                    int willDeletePosition;
+                    cin >> willDeletePosition;
+                    int saveDeletedValue = -999;
+                    if (llist.Delete(willDeletePosition, saveDeletedValue) != -1)
+                    {
+                        cout << "---SUCCESS DELETE NUMBER " << willDeletePosition << " AND  VALUE IS " << saveDeletedValue << "---" << endl;
+                        break;
+                    }
+                    
+                    break;
                     
                 }
             }
