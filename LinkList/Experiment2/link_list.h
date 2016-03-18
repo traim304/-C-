@@ -32,7 +32,7 @@ public:
     void Clear();	// 将线性表清空
     void DestoryList();   // 销毁线性表
     int Length();		// 求线性表长度
-    bool Empty();	// 判断线性表是否为空
+    bool isEmpty();	// 判断线性表是否为空
     int SetElem(int position, MyType e);
     int GetElem(int position, MyType &e);
     int  Locate(MyType  e);
@@ -80,7 +80,7 @@ int LinkList<MyType>::Delete(int position, MyType &e) {
 
 template <class Mytype>
 int LinkList<Mytype>::Insert(int position, Mytype e) {
-    if (position < 1) {
+    if (position < 1 || position > length + 1) {
         cout << "---Get Position Error---";
         return ERROR;
     }
@@ -125,8 +125,8 @@ int LinkList<Mytype>::Insert(int position, Mytype e) {
 template <class MyType>
 int LinkList<MyType>::Locate(MyType  e) {
     Node<MyType> *temPoint = nullptr;
-    temPoint = pHead->pNext;
-    int count = 1;
+    temPoint = pHead;
+    int count = 0;
     while (temPoint != nullptr && temPoint->data != e ) {
         temPoint = temPoint->pNext;
         count++;
@@ -137,7 +137,7 @@ int LinkList<MyType>::Locate(MyType  e) {
         return -1;
     }
     CurPoint = temPoint;
-    CurPosition = count++;
+    CurPosition = count;
     return count;
 }
 
@@ -149,13 +149,13 @@ void LinkList<MyType>::Traverse() {
     Node<MyType> *temPoint = nullptr;
     temPoint = pHead->pNext;
 
-    while (temPoint->pNext != nullptr) {
+    while (temPoint != nullptr) {
         MyType saveData = temPoint->data;
         cout <<  saveData << " ";
         temPoint = temPoint->pNext;
     }
     
-    if (temPoint == pHead->pNext) {
+    if (temPoint == pHead) {
         cout << "---None Nodes---" << endl;
     }
 }
@@ -163,31 +163,34 @@ void LinkList<MyType>::Traverse() {
 
 template <class MyType>
 int LinkList<MyType>::GetElem(int position, MyType &e) {
-    if (position < 1) {
+    if (position < 1 || position > length) {
         cout << "---Get Position Error---";
         return ERROR;
     }
 
     Node<MyType> *temPoint = nullptr;
-    temPoint = pHead->pNext;
+    temPoint = pHead;
 
     if (position > CurPosition)     //position在curposition之后
     {
-        temPoint = CurPosition;
-        for (int i = CurPosition; i != position + 1; i++) {
+        temPoint = CurPoint;
+        for (int i = CurPosition; i != position; i++) {
             temPoint = temPoint->pNext;
         }
     }
     else        //position在curposition之前
     {
-        for (int i = 1; i != position+1; i++) {
+        for (int i = 1; i != position; i++) {
             temPoint = temPoint->pNext;
         }
     }
     
-    CurPosition = temPoint;
     CurPosition = position;
-    e = temPoint->pNext;
+    CurPoint = temPoint;
+    e = temPoint->data;
+    if (temPoint != nullptr) {
+        delete [] temPoint;
+    }
     return SUCCESS;
 }
 
@@ -195,24 +198,24 @@ int LinkList<MyType>::GetElem(int position, MyType &e) {
 
 template <class MyType>
 int LinkList<MyType>::SetElem(int position, MyType e) {
-    if (position < 1) {
+    if (position < 1 || position > length) {
         cout << "---Get Position Error---";
         return ERROR;
     }
     
     Node<MyType> *temPoint = nullptr;
-    temPoint = pHead->pNext;
+    temPoint = pHead;
     
     if (position > CurPosition)     //position在curposition之后
     {
-        temPoint = CurPosition;
-        for (int i = CurPosition; i != position + 1; i++) {
+        temPoint = CurPoint;
+        for (int i = CurPosition; i != position; i++) {
             temPoint = temPoint->pNext;
         }
     }
     else        //position在curposition之前
     {
-        for (int i = 1; i != position+1; i++) {
+        for (int i = 0; i != position; i++) {
             temPoint = temPoint->pNext;
         }
     }
@@ -224,8 +227,8 @@ int LinkList<MyType>::SetElem(int position, MyType e) {
 }
 
 template <class MyType>
-bool LinkList<MyType>::Empty() {
-    return length == 0 ? 0 : 1;
+bool LinkList<MyType>::isEmpty() {
+    return length == 0 ? 1 : 0;
 }
 
 
