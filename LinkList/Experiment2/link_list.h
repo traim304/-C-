@@ -21,7 +21,7 @@ class LinkList
 private:
     Node<MyType> *pHead;		// 头结点指针
     Node<MyType> *pTail;      //尾节点
-    Node<MyType> *CurPoint;     //当前指针
+    Node<MyType> *curPoint;     //当前指针
     int CurPosition;
     int length;     //当前链表中的元素个数
     
@@ -42,8 +42,102 @@ public:
     int  GetPrior(MyType e, MyType &x);
     int GetNext(MyType e, MyType &x);
     Node<MyType> *GetElemPtr(int position) ;
+    int  CreateListOrder(int n);
+    int  InsertOrder(MyType e);
 };
 // 单链表类模板的实现部分
+
+
+
+
+
+
+
+template <class MyType>
+Node<MyType>* LinkList<MyType>::GetElemPtr(int position) {
+    int uselessData;
+    GetElem(position, uselessData);
+    return curPoint;
+}
+
+
+
+
+template <class MyType>
+int LinkList<MyType>::GetNext(MyType e, MyType &x)
+{
+    if (isEmpty())
+    {
+        cout << "---LinkList is Empty !!! ---" << endl;
+        return ERROR;
+    }
+        
+    Node<MyType> *nextPoint = new  Node<MyType>;
+    nextPoint = pHead->pNext;
+    Node<MyType> *curPoint = new  Node<MyType>;
+    curPoint = pHead;
+    
+    while (nextPoint != nullptr && curPoint->data != e ) {
+        curPoint = curPoint->pNext;
+        nextPoint = nextPoint->pNext;
+        
+    }
+    
+    if (curPoint == nullptr) {
+        cout << "---Can't Find This Item---";
+        return ERROR;
+    }
+    else if (nextPoint == nullptr)
+    {
+        cout << "---This is the finish Item---" << endl;
+        return 0;
+    }
+    else
+    {
+        e = nextPoint->data;
+        cout << "---This Prior Item is " << e << " ---" << endl;
+    }
+    return 1;
+        }
+
+
+template <class MyType>
+int LinkList<MyType>::GetPrior(MyType e, MyType &x)
+{
+    if (isEmpty())
+    {
+        cout << "---LinkList is Empty !!! ---" << endl;
+        return ERROR;
+    }
+    Node<MyType> *priorPoint = new  Node<MyType>;
+    priorPoint = pHead;
+    Node<MyType> *curPoint = new  Node<MyType>;
+    curPoint = pHead;
+    
+    while (curPoint !=nullptr && curPoint->data != e ) {
+        priorPoint = curPoint;
+        curPoint = curPoint->pNext;
+        
+        
+    }
+    
+    if (curPoint == nullptr) {
+        cout << "---Can't Find This Item---";
+        return ERROR;
+    }
+    else if (priorPoint == pHead)
+    {
+        cout << "---This is the first Item---" << endl;
+        return 0;
+    }
+    else
+    {
+        e = priorPoint->data;
+        cout << "---This Prior Item is " << e << " ---" << endl;
+    }
+    return 1;
+}
+
 
 template <class MyType>
 int LinkList<MyType>::Delete(int position, MyType &e) {
@@ -56,7 +150,7 @@ int LinkList<MyType>::Delete(int position, MyType &e) {
     temPoint = pHead;
     
     if (position > CurPosition){
-        temPoint = CurPoint;
+        temPoint = curPoint;
         for (int i = CurPosition; i != position-1; i++) {
             temPoint = temPoint->pNext;
         }
@@ -70,10 +164,10 @@ int LinkList<MyType>::Delete(int position, MyType &e) {
     
     //此时tempoint指向待删除节点前一节点
     Node<MyType> *p = temPoint->pNext;      //p指向待删除的变量
-    CurPoint = temPoint;
+    curPoint = temPoint;
     temPoint  = nullptr;
     CurPosition = position-1;
-    CurPoint->pNext = CurPoint->pNext->pNext;
+    curPoint->pNext = curPoint->pNext->pNext;
     CurPosition++;
     e = p->data;
     delete [] p;
@@ -94,18 +188,18 @@ int LinkList<Mytype>::Insert(int position, Mytype e) {
     
     if (position > CurPosition)
     {
-        temPoint = CurPoint;
+        temPoint = curPoint;
         for (int i = CurPosition; i != position -1 ; i++) {
             temPoint = temPoint->pNext;
         }
         
         CurPosition = position;
-        CurPoint = temPoint;
+        curPoint = temPoint;
         temPoint = new Node<Mytype>;
         temPoint->data = e;
         temPoint->pNext = nullptr;
-        temPoint->pNext = CurPoint->pNext;
-        CurPoint->pNext = temPoint;
+        temPoint->pNext = curPoint->pNext;
+        curPoint->pNext = temPoint;
         length++;
         return SUCCESS;
     }
@@ -117,11 +211,11 @@ int LinkList<Mytype>::Insert(int position, Mytype e) {
             temPoint = temPoint->pNext;
         }
         
-        CurPoint = temPoint;
+        curPoint = temPoint;
         temPoint = new Node<Mytype>;
         temPoint->data = e;
-        temPoint->pNext = CurPoint->pNext;
-        CurPoint->pNext = temPoint;
+        temPoint->pNext = curPoint->pNext;
+        curPoint->pNext = temPoint;
         CurPosition = position-1;
         return SUCCESS;
         
@@ -144,7 +238,7 @@ int LinkList<MyType>::Locate(MyType  e) {
         cout << "---Can't Find This Item---" << endl;
         return -1;
     }
-    CurPoint = temPoint;
+    curPoint = temPoint;
     CurPosition = count;
     return count;
 }
@@ -181,7 +275,7 @@ int LinkList<MyType>::GetElem(int position, MyType &e) {
 
     if (position > CurPosition)     //position在curposition之后
     {
-        temPoint = CurPoint;
+        temPoint = curPoint;
         for (int i = CurPosition; i != position; i++) {
             temPoint = temPoint->pNext;
         }
@@ -194,7 +288,7 @@ int LinkList<MyType>::GetElem(int position, MyType &e) {
     }
     
     CurPosition = position;
-    CurPoint = temPoint;
+    curPoint = temPoint;
     e = temPoint->data;
     if (temPoint != nullptr) {
         delete [] temPoint;
@@ -216,7 +310,7 @@ int LinkList<MyType>::SetElem(int position, MyType e) {
     
     if (position > CurPosition)     //position在curposition之后
     {
-        temPoint = CurPoint;
+        temPoint = curPoint;
         for (int i = CurPosition; i != position; i++) {
             temPoint = temPoint->pNext;
         }
@@ -229,7 +323,7 @@ int LinkList<MyType>::SetElem(int position, MyType e) {
     }
 
     temPoint->data = e;
-    CurPoint = temPoint;
+    curPoint = temPoint;
     CurPosition = position;
     return SUCCESS;
 }
@@ -258,14 +352,14 @@ void LinkList<MyType>::DestoryList() {
     delete [] pHead;
     length = 0;
     CurPosition = 0;
-    CurPoint = nullptr;
+    curPoint = nullptr;
 }
 
 
 template <class MyType>
 void LinkList<MyType>::Clear() {
     length = 0;
-    CurPoint = pHead;
+    curPoint = pHead;
     CurPosition = 0;
     pTail = pHead;
 }
@@ -277,7 +371,7 @@ void  LinkList<MyType>::Init() {
     pHead = new Node<MyType>;
     pTail = pHead;
     CurPosition = 0;
-    CurPoint = pHead;
+    curPoint = pHead;
     length = 0;
     
 }

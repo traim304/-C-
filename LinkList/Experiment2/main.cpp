@@ -16,7 +16,7 @@ int main(void)
         LinkList<int> llist;
         llist.Init();
         int c = 0 ;
-        while (c != 12)
+        while (c != 15)
         {
             cout << endl << "1. 生成线性表.";
             cout << endl << "2. 显示线性表.";
@@ -29,7 +29,9 @@ int main(void)
             cout << endl << "9.返回指定元素的值.";
             cout << endl << "10.插入元素到制定位置.";
             cout << endl << "11.删除指定位置的元素.";
-            cout << endl << "12. 退出";
+            cout << endl << "12.返回指定元素的前一元素.";
+            cout << endl << "13.返回指定元素的下一元素.";
+            cout << endl << "19. 退出";
             cout << endl << "选择功能(1~12):";
             cin >> c;
             switch (c)
@@ -174,6 +176,27 @@ int main(void)
                     
                     break;
                     
+                }
+                    
+                case 12:
+                {
+                    cout << "---Which one do you want to get PRIOR item of elements ?---" << endl;
+                    int willFindItem;
+                    cin >> willFindItem;
+                    int savePriorData;
+                    llist.GetPrior(willFindItem, savePriorData);
+                    break;
+                }
+                
+                case 13:
+                {
+                    cout << "---Which one do you want to get NEXT item of elements ?---" << endl;
+                    int willFindItem;
+                    cin >> willFindItem;
+                    int saveNextData;
+                    llist.GetNext(willFindItem, saveNextData);
+                    break;
+ 
                 }
             }
         }
