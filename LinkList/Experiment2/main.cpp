@@ -14,9 +14,8 @@
 int main(void)
     {
         LinkList<int> llist;
-        llist.Init();
         int c = 0 ;
-        while (c != 15)
+        while (c != 17)
         {
             cout << endl << "1. 生成线性表.";
             cout << endl << "2. 显示线性表.";
@@ -31,13 +30,17 @@ int main(void)
             cout << endl << "11.删除指定位置的元素.";
             cout << endl << "12.返回指定元素的前一元素.";
             cout << endl << "13.返回指定元素的下一元素.";
-            cout << endl << "19. 退出";
-            cout << endl << "选择功能(1~12):";
+            cout << endl << "14.返回指定元素的地址.";
+            cout << endl << "15.创建顺序链表.";
+            cout << endl << "16.有序的插入到顺序链表.";
+            cout << endl << "17. 退出";
+            cout << endl << "选择功能(1~17):";
             cin >> c;
             switch (c)
             {
                 case 1:
                 {
+                    llist.Init();
                     int saveData = 1;       //使循环进行
                     while (saveData) {
                         cout << "Input The Data of Number " << llist.Length()+1 <<": " << endl;
@@ -73,7 +76,7 @@ int main(void)
                     
                 case 4:
                 {
-                    cout << "---Are You Sure ?---" << endl;
+                    cout << "---Are You Sure <Y/N>?---" << endl;
                     char confirm;
                     cin >> confirm;
                     if (confirm == 'y' || confirm == 'Y') {
@@ -86,7 +89,7 @@ int main(void)
                     
                 case  5:
                 {
-                    cout << "---Are You Sure ?---" << endl;
+                    cout << "---Are You Sure <Y/N>?---" << endl;
                     char confirm;
                     cin >> confirm;
                     if (confirm == 'y' || confirm == 'Y') {
@@ -198,6 +201,47 @@ int main(void)
                     break;
  
                 }
+                    
+                case 14:
+                {
+                    cout << "---Which one do you want to get  address of elements" << endl;
+                    int willFindItem;
+                    cin >> willFindItem;
+                    Node<int> * saveAddress = llist.GetElemPtr(willFindItem);
+                    printf("---This Address is %p---\n", saveAddress);
+                    cout << "---The value of this address is " << saveAddress->data << "---";
+                    break;
+                }
+                
+                case 15:
+                {
+                    llist.Init();
+                    cout << "---Must Input In The Order---" << endl;
+                    int saveData = 1;       //使循环进行
+                    while (saveData) {
+                        cout << "Input The Data of Number " << llist.Length()+1 <<": " << endl;
+                        cin >> saveData;
+                        if (saveData == 0) {
+                            break;
+                        }
+                        llist.CreateListOrder(saveData);
+                        
+                    }
+                    
+                    break;
+                }
+                    
+                case 16:
+                {
+                    cout << "---Enter The Number---" << endl;
+                    int insertNum;
+                    cin >> insertNum;
+                    llist.InsertOrder(insertNum);
+                    break;
+                }
+                    
+                default:
+                    break;
             }
         }
         return 0;
