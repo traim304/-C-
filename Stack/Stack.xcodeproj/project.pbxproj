@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		16039D061CA2E393009BBCD7 /* BinaryConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryConversion.h; path = Stack/BinaryConversion.h; sourceTree = "<group>"; };
+		16039D061CA2E393009BBCD7 /* BinaryConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryConversion.h; sourceTree = "<group>"; };
 		1681C2891CA2CE970088E7DD /* Stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stack; sourceTree = BUILT_PRODUCTS_DIR; };
 		1681C28C1CA2CE970088E7DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1681C2931CA2CEDC0088E7DD /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
@@ -44,7 +44,6 @@
 		1681C2801CA2CE970088E7DD = {
 			isa = PBXGroup;
 			children = (
-				16039D061CA2E393009BBCD7 /* BinaryConversion.h */,
 				1681C28B1CA2CE970088E7DD /* Stack */,
 				1681C28A1CA2CE970088E7DD /* Products */,
 			);
@@ -61,6 +60,7 @@
 		1681C28B1CA2CE970088E7DD /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				16039D061CA2E393009BBCD7 /* BinaryConversion.h */,
 				1681C28C1CA2CE970088E7DD /* main.cpp */,
 				1681C2931CA2CEDC0088E7DD /* Node.h */,
 				1681C2941CA2CF2D0088E7DD /* lk_stack.h */,

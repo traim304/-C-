@@ -115,7 +115,6 @@ bool LinkStack<MyType>::Push(MyType e){
         pTop = temPoint;
     }
     length++;
-    cout << "---Push Done---" << endl;
     return true;
 }
 
@@ -143,7 +142,8 @@ void LinkStack<MyType>::Traverse() {
     isLegal();
     Node<MyType> *temPoint = pTop;
     while (temPoint != nullptr) {
-        cout << " " << temPoint->data;
+        cout << temPoint->data;
+        temPoint = temPoint->pNext;
     }
 }
 #endif /* lk_stack_h */

@@ -11,16 +11,24 @@
 
 
 #include "lk_stack.h"
+using  namespace std;
 
 
 void Conversion(int willConvertNum, int toBinary)
 {
-    lk_stack BinaryStack;
+    LinkStack<int> BinaryStack;
     BinaryStack.Init();
-    int commercial;     //商
-    while (commercial >= toBinary) {
-        commercial
+    int commercial = willConvertNum;     //商
+    while (commercial != 0) {
+        int remainder = commercial % toBinary;      //余数
+        BinaryStack.Push(remainder);
+        commercial = commercial / toBinary;
     }
+    
+    cout << "---Converted Number is " ;
+    BinaryStack.Traverse();
+    cout << "---" << endl;
+    
 }
 
 

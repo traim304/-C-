@@ -9,11 +9,15 @@
 //
 
 #include <iostream>
-#include 
+#include "BinaryConversion.h"
 
 int main(int argc, const char * argv[]) {
-    LinkStack<int> Binaryconversion;
-    Binaryconversion.Init();
-    
+    cout << "---What is the number ? ---" << endl;
+    int saveNum;
+    cin >> saveNum;
+    cout << "---Which binaty  do you want convert ?---" << endl;
+    int saveBinary;
+    cin >> saveBinary;
+    Conversion(saveNum, saveBinary);
     return 0;
 }
