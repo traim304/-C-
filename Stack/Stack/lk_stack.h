@@ -142,9 +142,10 @@ void LinkStack<MyType>::Traverse() {
     isLegal();
     Node<MyType> *temPoint = pTop;
     while (temPoint != nullptr) {
-        cout << temPoint->data;
+        cout << " " << temPoint->data;
         temPoint = temPoint->pNext;
     }
+    delete [] temPoint;
 }
 #endif /* lk_stack_h */
 

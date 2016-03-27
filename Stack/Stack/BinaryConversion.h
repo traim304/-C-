@@ -31,5 +31,18 @@ void Conversion(int willConvertNum, int toBinary)
     
 }
 
+void D2X()      //10进制 to x进制
+{
+    cout << "---What is the number ? ---" << endl;
+    int saveNum;
+    cin >> saveNum;
+    cout << "---Which binary  do you want convert ?---" << endl;
+    int saveBinary;
+    cin >> saveBinary;
+    Conversion(saveNum, saveBinary);
+
+}
+
+
 
 #endif /* BinaryConversion_h */

@@ -12,12 +12,15 @@
 #include "BinaryConversion.h"
 
 int main(int argc, const char * argv[]) {
-    cout << "---What is the number ? ---" << endl;
-    int saveNum;
-    cin >> saveNum;
-    cout << "---Which binaty  do you want convert ?---" << endl;
-    int saveBinary;
-    cin >> saveBinary;
-    Conversion(saveNum, saveBinary);
-    return 0;
+    char c;
+    cout << "---Now, Start? <Y/N>---" << endl;
+    cin >> c;
+    while (c == 'Y' || c == 'y') {
+        D2X();
+        cout << endl << endl << "##################################" << endl;
+        cout << endl << "---Continue ? <Y/N>---" << endl;
+        cin >> c;
+    }
+    
+    exit(66);
 }
