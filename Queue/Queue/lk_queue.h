@@ -12,8 +12,7 @@
 #include "node.h"
 // 链栈类模板
 #include "cstdlib"
-using std::cout;
-using std::endl;
+using namespace std;
 
 template<class MyType>
 class LinkQueue
@@ -32,47 +31,8 @@ public:
         bool OutQueue(MyType  &e);
         bool GetHead(MyType &e);
         void Traverse();
-        MyType add_two_items();
-    void change_pRear(Node<MyType> *);
-    void change_pFront(Node<MyType> *);
-    Node<MyType>* get_pRear();
-    Node<MyType>* get_pFront();
 };
 // 链队类模板的实现部分
-
-template <class MyType>
-Node<MyType>* LinkQueue<MyType>::get_pFront() {
-    return pFront;
-}
-
-template <class MyType>
-Node<MyType>* LinkQueue<MyType>::get_pRear(){
-    return pFront;
-}
-
-
-template <class MyType>
-void LinkQueue<MyType>::change_pRear(Node<MyType> *p) {
-    pRear = p;
-}
-
-template <class MyType>
-void LinkQueue<MyType>::change_pFront(Node<MyType> *p) {
-    pFront = p;
-}
-
-template <class MyType>
-MyType LinkQueue<MyType>::add_two_items(){
-    if(length  < 2)
-    {
-        return 1;
-    }
-    else
-    {
-        return (pFront->data + pFront->pNext->data);
-    }
-    
-}
 
 
 template <class MyType>
@@ -99,7 +59,6 @@ template <class MyType >
 void LinkQueue<MyType>::Init() {
     pFront = new Node<MyType>;
     pRear = pFront;
-    pRear->data = 1;      //杨辉三角输出第一个始终为1
     pRear->pNext = nullptr;
     length = 1;
 }

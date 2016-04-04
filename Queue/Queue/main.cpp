@@ -9,8 +9,9 @@
 
 #include <iostream>
 #include "lk_queue.h"
-#include "yh_triangle.h"
+#include "yh_triangle_ls.h"
 #include "sq_queue.h"
+#include "yh_triangle_sq.h"
 
 using std::cout;
 using std::endl;
@@ -21,7 +22,12 @@ int main(int argc, const char * argv[]) {
     int n;
     cout << "---How many lines would you like to print ? ---" << endl;
     cin >> n;
-    print_yh_triangle(n);
+    cout << "---Use Linklist---"<<endl;
+    print_yh_triangle_ls(n);
+    cout <<"*********************************"<< endl;
+    cout << "---Use sequence----"<< endl;
+    print_yh_triangle_sq(n);
+    
     return 0;
 }
 

@@ -10,6 +10,8 @@
 #define sq_queue_h
 using namespace std;
 
+
+
 template<class ElemType>
 class SqQueue
 {
@@ -43,8 +45,7 @@ void SqQueue<MyType>::Traverse() {
     int temp = front;
     int i = length;
     while (i--) {
-        cout << "front = " << temp << "zhiwei ";
-        cout << " " << elems[temp] << endl;
+        cout << " " << elems[temp] ;
         temp = (temp + 1 + maxSize)%maxSize;
     }
 }
@@ -54,7 +55,7 @@ bool SqQueue<MyType>::GetHead(MyType &e) {
     if (is_full() || is_empty()) {
         return false;
     }
-    e = *elems[front];
+    e = elems[front];
     return true;
 }
 
@@ -78,7 +79,6 @@ bool SqQueue<MyType>::OutQueue (MyType &e) {
     }
         
     e = elems[front];
-    cout << "outqueue = " << e << endl;
     front = (front+1+maxSize) % maxSize;
     length--;
     return true;

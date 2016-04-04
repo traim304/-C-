@@ -23,7 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		16721F791CAD3AA000E14B5B /* yh_triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yh_triangle.h; sourceTree = "<group>"; };
+		164830281CB2AAA5002C6004 /* yh_triangle_sq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yh_triangle_sq.h; sourceTree = "<group>"; };
+		168F965D1CB2ADA50070E55A /* yh_triangle_ls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yh_triangle_ls.h; sourceTree = "<group>"; };
 		16A1CD391CAC046600A35A1F /* Queue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Queue; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A1CD3C1CAC046600A35A1F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		16A1CD431CAC04A200A35A1F /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
@@ -61,7 +62,8 @@
 		16A1CD3B1CAC046600A35A1F /* Queue */ = {
 			isa = PBXGroup;
 			children = (
-				16721F791CAD3AA000E14B5B /* yh_triangle.h */,
+				164830281CB2AAA5002C6004 /* yh_triangle_sq.h */,
+				168F965D1CB2ADA50070E55A /* yh_triangle_ls.h */,
 				16A1CD3C1CAC046600A35A1F /* main.cpp */,
 				16A1CD431CAC04A200A35A1F /* node.h */,
 				16A1CD441CAC04CF00A35A1F /* lk_queue.h */,
