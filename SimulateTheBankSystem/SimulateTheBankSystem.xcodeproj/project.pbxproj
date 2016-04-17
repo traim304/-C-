@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		167FC72E1CBD1769002ABE17 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 167FC72D1CBD1769002ABE17 /* main.cpp */; };
-		167FC7351CBD17C6002ABE17 /* ReadMe.c in Sources */ = {isa = PBXBuildFile; fileRef = 167FC7341CBD17C6002ABE17 /* ReadMe.c */; };
+		167FC7371CBD1A12002ABE17 /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 167FC7361CBD1A12002ABE17 /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +24,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		161EA1281CC113240069B01C /* print_queue_state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = print_queue_state.h; sourceTree = "<group>"; };
 		167FC72A1CBD1769002ABE17 /* SimulateTheBankSystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimulateTheBankSystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		167FC72D1CBD1769002ABE17 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		167FC7341CBD17C6002ABE17 /* ReadMe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ReadMe.c; sourceTree = "<group>"; };
+		167FC7361CBD1A12002ABE17 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		1692602D1CBD465800960B03 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		1692602E1CBD4B1800960B03 /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		1692602F1CBD505F00960B03 /* minimum_queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minimum_queue.h; sourceTree = "<group>"; };
+		169260311CBDFF8A00960B03 /* customer_arrival_time_random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = customer_arrival_time_random.h; sourceTree = "<group>"; };
+		169260341CBE0E4B00960B03 /* sort_queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sort_queue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +49,7 @@
 		167FC7211CBD1769002ABE17 = {
 			isa = PBXGroup;
 			children = (
-				167FC7341CBD17C6002ABE17 /* ReadMe.c */,
+				167FC7361CBD1A12002ABE17 /* ReadMe.md */,
 				167FC72C1CBD1769002ABE17 /* SimulateTheBankSystem */,
 				167FC72B1CBD1769002ABE17 /* Products */,
 			);
@@ -60,6 +66,12 @@
 		167FC72C1CBD1769002ABE17 /* SimulateTheBankSystem */ = {
 			isa = PBXGroup;
 			children = (
+				169260311CBDFF8A00960B03 /* customer_arrival_time_random.h */,
+				161EA1281CC113240069B01C /* print_queue_state.h */,
+				1692602D1CBD465800960B03 /* queue.h */,
+				1692602F1CBD505F00960B03 /* minimum_queue.h */,
+				1692602E1CBD4B1800960B03 /* node.h */,
+				169260341CBE0E4B00960B03 /* sort_queue.h */,
 				167FC72D1CBD1769002ABE17 /* main.cpp */,
 			);
 			path = SimulateTheBankSystem;
@@ -121,8 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167FC7371CBD1A12002ABE17 /* ReadMe.md in Sources */,
 				167FC72E1CBD1769002ABE17 /* main.cpp in Sources */,
-				167FC7351CBD17C6002ABE17 /* ReadMe.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +255,7 @@
 				167FC7331CBD1769002ABE17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
