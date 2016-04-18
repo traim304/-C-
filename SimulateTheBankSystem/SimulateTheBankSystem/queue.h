@@ -9,6 +9,8 @@
 #ifndef queue_h
 #define queue_h
 #include <iostream>
+#include "PATH.h"
+
 using namespace std;
 
 #include "node.h"
@@ -66,14 +68,18 @@ bool Queue<MyType>:: is_pop() {
 template <class MyType>
 void Queue<MyType>::pop() {
     
+    fstream outfile(PATH,ios::app);
     
-    cout << endl<<  "－－－－－－－出列操作－－－－－－－" << endl << "出队列者信息为:" <<"第" << p_front->id << "个人进银行" << "(" << p_front->coming_time <<" min)" << "  此次处理共耗时 " << p_front->process_time << " min" << endl;
+    cout << endl<<  "－－－－－－－－－－业务处理完毕，退出队列－－－－－－－－－－－" << endl << "出队列者信息为:" << endl << "      第" << p_front->id << "个人"<< "(" << p_front->coming_time <<" min)"<<"进银行"  << "  此次办理业务共耗时 " << p_front->process_time << " min" << endl;
+    
+    outfile << endl<<  "－－－－－－－－－－业务处理完毕，退出队列－－－－－－－－－－－" << endl << "出队列者信息为:" << endl << "      第" << p_front->id << "个人"<< "(" << p_front->coming_time <<" min)"<<"进银行"  << "  此次办理业务共耗时 " << p_front->process_time << " min" << endl;
     
     //信息输出完毕。滚！
     node<MyType>* tmp = p_front;
     p_front = p_front->p_next;
     current_num--;
     delete tmp;
+    outfile.close();
 }
 
 
