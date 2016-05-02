@@ -20,7 +20,7 @@ int* customer_arrival_time_random()
     
     for (int i = 0; i < 100; i++)
     {
-        array_customer[i] = random() % 480;
+        array_customer[i] = random() % 200;
     }
     
     //排序
