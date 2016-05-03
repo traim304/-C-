@@ -24,6 +24,7 @@ void print_interactive()
     cout << "8.为指定元素所在的节点插入左右孩子" << endl;
     cout << "9.修改某元素的值" << endl;
     cout << "10.查询该二叉树共有多少节点" << endl;
+ 
     cout << "11.该二叉树的深度为" << endl;
     cout << "12.查询该二叉树叶子的个数" << endl;
     cout << "13.销毁该二叉树" << endl;
@@ -54,9 +55,10 @@ int main(int argc, const char * argv[]) {
                 break;
             case 3:
             {
-                BinTreeNode<char> *save_root;
-                save_root = char_bin_tree.GetRoot();
-                cout << "二叉树的根节点的值为"<< save_root->data <<endl;
+                cout << endl << "333" << endl;
+//                BinTreeNode<char> *save_root;
+//                save_root = char_bin_tree.GetRoot();
+//                cout << "二叉树的根节点的值为"<< save_root->data <<endl;
             }
                 break;
             case 4:
@@ -151,7 +153,10 @@ int main(int argc, const char * argv[]) {
         
         
         print_interactive();
+        cin.ignore();
+        //cin.sync();
         cin >> key;
+    
     }
     
     return 0;

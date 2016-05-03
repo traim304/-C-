@@ -243,6 +243,7 @@
 				16C115D91CC8A3F200A85285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
