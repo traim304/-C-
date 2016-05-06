@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1692EBA61CD88EC400FDC263 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1692EBA51CD88EC400FDC263 /* main.cpp */; };
+		1681C28D1CA2CE970088E7DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1681C28C1CA2CE970088E7DD /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1692EBA01CD88EC400FDC263 /* CopyFiles */ = {
+		1681C2871CA2CE970088E7DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,15 +23,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1692EBA21CD88EC400FDC263 /* HuffmanTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HuffmanTree; sourceTree = BUILT_PRODUCTS_DIR; };
-		1692EBA51CD88EC400FDC263 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1692EBAC1CD88F5400FDC263 /* HuffmanTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuffmanTree.h; sourceTree = "<group>"; };
-		1692EBAD1CD88F5400FDC263 /* HuffmanTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuffmanTreeNode.h; sourceTree = "<group>"; };
-		1692EBAE1CD88F5400FDC263 /* key_value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = key_value.h; sourceTree = "<group>"; };
+		16039D061CA2E393009BBCD7 /* BinaryConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryConversion.h; sourceTree = "<group>"; };
+		1681C2891CA2CE970088E7DD /* Stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stack; sourceTree = BUILT_PRODUCTS_DIR; };
+		1681C28C1CA2CE970088E7DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1681C2931CA2CEDC0088E7DD /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		1681C2941CA2CF2D0088E7DD /* lk_stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lk_stack.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1692EB9F1CD88EC400FDC263 /* Frameworks */ = {
+		1681C2861CA2CE970088E7DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,101 +41,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1692EB991CD88EC400FDC263 = {
+		1681C2801CA2CE970088E7DD = {
 			isa = PBXGroup;
 			children = (
-				1692EBA41CD88EC400FDC263 /* HuffmanTree */,
-				1692EBA31CD88EC400FDC263 /* Products */,
+				1681C28B1CA2CE970088E7DD /* Stack */,
+				1681C28A1CA2CE970088E7DD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1692EBA31CD88EC400FDC263 /* Products */ = {
+		1681C28A1CA2CE970088E7DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1692EBA21CD88EC400FDC263 /* HuffmanTree */,
+				1681C2891CA2CE970088E7DD /* Stack */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1692EBA41CD88EC400FDC263 /* HuffmanTree */ = {
+		1681C28B1CA2CE970088E7DD /* Stack */ = {
 			isa = PBXGroup;
 			children = (
-				1692EBA51CD88EC400FDC263 /* main.cpp */,
-				1692EBAC1CD88F5400FDC263 /* HuffmanTree.h */,
-				1692EBAD1CD88F5400FDC263 /* HuffmanTreeNode.h */,
-				1692EBAE1CD88F5400FDC263 /* key_value.h */,
+				16039D061CA2E393009BBCD7 /* BinaryConversion.h */,
+				1681C28C1CA2CE970088E7DD /* main.cpp */,
+				1681C2931CA2CEDC0088E7DD /* Node.h */,
+				1681C2941CA2CF2D0088E7DD /* lk_stack.h */,
 			);
-			path = HuffmanTree;
+			path = Stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1692EBA11CD88EC400FDC263 /* HuffmanTree */ = {
+		1681C2881CA2CE970088E7DD /* Stack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1692EBA91CD88EC400FDC263 /* Build configuration list for PBXNativeTarget "HuffmanTree" */;
+			buildConfigurationList = 1681C2901CA2CE970088E7DD /* Build configuration list for PBXNativeTarget "Stack" */;
 			buildPhases = (
-				1692EB9E1CD88EC400FDC263 /* Sources */,
-				1692EB9F1CD88EC400FDC263 /* Frameworks */,
-				1692EBA01CD88EC400FDC263 /* CopyFiles */,
+				1681C2851CA2CE970088E7DD /* Sources */,
+				1681C2861CA2CE970088E7DD /* Frameworks */,
+				1681C2871CA2CE970088E7DD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HuffmanTree;
-			productName = HuffmanTree;
-			productReference = 1692EBA21CD88EC400FDC263 /* HuffmanTree */;
+			name = Stack;
+			productName = Stack;
+			productReference = 1681C2891CA2CE970088E7DD /* Stack */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1692EB9A1CD88EC400FDC263 /* Project object */ = {
+		1681C2811CA2CE970088E7DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = JacobLan;
 				TargetAttributes = {
-					1692EBA11CD88EC400FDC263 = {
-						CreatedOnToolsVersion = 7.3;
+					1681C2881CA2CE970088E7DD = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 1692EB9D1CD88EC400FDC263 /* Build configuration list for PBXProject "HuffmanTree" */;
+			buildConfigurationList = 1681C2841CA2CE970088E7DD /* Build configuration list for PBXProject "Stack" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1692EB991CD88EC400FDC263;
-			productRefGroup = 1692EBA31CD88EC400FDC263 /* Products */;
+			mainGroup = 1681C2801CA2CE970088E7DD;
+			productRefGroup = 1681C28A1CA2CE970088E7DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1692EBA11CD88EC400FDC263 /* HuffmanTree */,
+				1681C2881CA2CE970088E7DD /* Stack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1692EB9E1CD88EC400FDC263 /* Sources */ = {
+		1681C2851CA2CE970088E7DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1692EBA61CD88EC400FDC263 /* main.cpp in Sources */,
+				1681C28D1CA2CE970088E7DD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1692EBA71CD88EC400FDC263 /* Debug */ = {
+		1681C28E1CA2CE970088E7DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -175,11 +174,10 @@
 			};
 			name = Debug;
 		};
-		1692EBA81CD88EC400FDC263 /* Release */ = {
+		1681C28F1CA2CE970088E7DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -212,14 +210,14 @@
 			};
 			name = Release;
 		};
-		1692EBAA1CD88EC400FDC263 /* Debug */ = {
+		1681C2911CA2CE970088E7DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		1692EBAB1CD88EC400FDC263 /* Release */ = {
+		1681C2921CA2CE970088E7DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -229,24 +227,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1692EB9D1CD88EC400FDC263 /* Build configuration list for PBXProject "HuffmanTree" */ = {
+		1681C2841CA2CE970088E7DD /* Build configuration list for PBXProject "Stack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1692EBA71CD88EC400FDC263 /* Debug */,
-				1692EBA81CD88EC400FDC263 /* Release */,
+				1681C28E1CA2CE970088E7DD /* Debug */,
+				1681C28F1CA2CE970088E7DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1692EBA91CD88EC400FDC263 /* Build configuration list for PBXNativeTarget "HuffmanTree" */ = {
+		1681C2901CA2CE970088E7DD /* Build configuration list for PBXNativeTarget "Stack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1692EBAA1CD88EC400FDC263 /* Debug */,
-				1692EBAB1CD88EC400FDC263 /* Release */,
+				1681C2911CA2CE970088E7DD /* Debug */,
+				1681C2921CA2CE970088E7DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1692EB9A1CD88EC400FDC263 /* Project object */;
+	rootObject = 1681C2811CA2CE970088E7DD /* Project object */;
 }

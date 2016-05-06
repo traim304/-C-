@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HuffmanTree.xcodeproj">
+      location = "self:Stack.xcodeproj">
    </FileRef>
 </Workspace>

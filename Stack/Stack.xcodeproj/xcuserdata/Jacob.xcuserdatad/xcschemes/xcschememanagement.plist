@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>HuffmanTree.xcscheme</key>
+		<key>Stack.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1692EBA11CD88EC400FDC263</key>
+		<key>1681C2881CA2CE970088E7DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

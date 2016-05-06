@@ -134,11 +134,9 @@ template <class MyType>
 int BinaryTree<MyType>::Depth(BinTreeNode<MyType>*r) {
     int l_depth;
     int r_depth;
-    if (nullptr != r) {
-        l_depth = Depth(r->left_child);
-        r_depth = Depth(r->right_child);
-    }
     
+    l_depth = Depth(r->left_child);
+    r_depth = Depth(r->right_child);
     
     return 1+(l_depth>r_depth ? l_depth : r_depth);
 }
@@ -311,12 +309,12 @@ template <class MyType>
 //此处的r可以看成是root，
 void BinaryTree<MyType>::Creat(BinTreeNode<MyType> *r,int flag) {
     BinTreeNode<MyType> *p = new BinTreeNode<MyType>;
-    //MyType x;
-    cin >> p->data;
+    MyType x;
+    cin >> x;
     p->left_child = p->right_child = nullptr;
     
     //x不为 '^' '#'
-    if (p->data != '^' && p->data != '#') {
+    if (x != '^' && x != '#') {
         if (flag == 0) {
             r->left_child = p;
         } else {
@@ -326,7 +324,6 @@ void BinaryTree<MyType>::Creat(BinTreeNode<MyType> *r,int flag) {
         Creat(p, 0);
         Creat(p, 1);
     }
-    
 }
 
 
