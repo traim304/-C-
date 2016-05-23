@@ -46,6 +46,15 @@ private:
 };
 
 template <class MyType>
+void Clear() {
+    for (int i = 0; i != 10; i++) {
+        for (int j = 0; j != 10; j++) {
+            vertex[i][j] = 0;
+        }
+    }
+}
+
+template <class MyType>
 void  Input_edge() {
     for (int i =0; i != size; i++) {
         for (int j = 0; j != size; j++) {
@@ -57,10 +66,16 @@ void  Input_edge() {
 template <class MyType>
 void  Graph<MyType>::InitGraph(int k, int n) {
     cout << "图的类型? (0无向图，1有向图，2网)" << endl;
-    if(cin >> kind && kind!= 0 && kind!= 1 && kind != 2)
+    //判断kind是否有效
+    while(cin >> kind)
     {
-        cout << "ARE YOU KIDDING ME ?" << endl;
+        if (kind!= 0 && kind!= 1 && kind != 2) {
+            cout << "ARE YOU KIDDING ME ?" << endl;
+            continue;
+        }
+        break;
     }
+    
     cout << "该图的顶点数为？" << endl;
     cin >> size;
     int verNum = 0;
