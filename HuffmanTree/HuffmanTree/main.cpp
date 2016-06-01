@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  HuffmanTree
-//
-//  Created by JacobLan on 16/5/3.
-//  Copyright © 2016年 JacobLan. All rights reserved.
-//
-
 #include <iostream>
 #include "HuffmanTree.h"
 

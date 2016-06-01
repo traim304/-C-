@@ -1,11 +1,3 @@
-//
-//  HuffmanTreeNode.h
-//  BinTree
-//
-//  Created by JacobLan on 16/5/2.
-//  Copyright © 2016年 JacobLan. All rights reserved.
-//
-
 #ifndef HuffmanTreeNode_h
 #define HuffmanTreeNode_h
 

@@ -1,11 +1,3 @@
-//
-//  key_value.h
-//  BinTree
-//
-//  Created by JacobLan on 16/5/2.
-//  Copyright © 2016年 JacobLan. All rights reserved.
-//
-
 #ifndef key_value_h
 #define key_value_h
 #include <string>

@@ -1,11 +1,3 @@
-//
-//  queue.h
-//  SimulateTheBankSystem
-//
-//  Created by JacobLan on 16/4/12.
-//  Copyright © 2016年 JacobLan. All rights reserved.
-//
-
 #ifndef queue_h
 #define queue_h
 #include <iostream>
@@ -72,7 +64,7 @@ void Queue<MyType>::pop() {
     
     cout << endl<<  "－－－－－－－－－－业务处理完毕，退出队列－－－－－－－－－－－" << endl << "出队列者信息为:" << endl << "      第" << p_front->id << "个人"<< "(" << p_front->coming_time <<" min)"<<"进银行"  << "  此次办理业务共耗时 " << p_front->process_time << " min" << endl;
     
-    outfile << endl<<  "－－－－－－－－－－业务处理完毕，退出队列－－－－－－－－－－－" << endl << "出队列者信息为:" << endl << "      第" << p_front->id << "个人"<< "(" << p_front->coming_time <<" min)"<<"进银行"  << "  此次办理业务共耗时 " << p_front->process_time << " min" << endl;
+    outfile << endl<<  "－－－－－－－－－－业务处理完毕，退出队列－－－－－－－－－－－" << endl << "出队列者信息为:" <<                                              endl << "      第" << p_front->id << "个人"<< "(" << p_front->coming_time <<" min)"<<"进银行"  << "  此次办理业务共耗时 " << p_front->process_time << " min" << endl;
     
     //信息输出完毕。滚！
     node<MyType>* tmp = p_front;

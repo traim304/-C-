@@ -1,12 +1,3 @@
-//
-//  HuffmanTree.h
-//  BinTree
-//
-//  Created by JacobLan on 16/5/2.
-//  Copyright © 2016年 JacobLan. All rights reserved.
-//
-
-
 #ifndef HuffmanTree_h
 #define HuffmanTree_h
 
@@ -104,7 +95,7 @@ void HuffmanTree<MyType>::encoding() {
         }
         
         
-        if (*locate_key_flag > n || *locate_key_flag < n) {
+        if (locate_key_flag == nullptr || *locate_key_flag > n || *locate_key_flag < n) {
             exit(9);
         }
         
