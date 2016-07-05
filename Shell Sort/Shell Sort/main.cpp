@@ -2,7 +2,7 @@
 using namespace  std;
 
 int main(int argc, const char * argv[]) {
-    cout << "将对几个数据进行直接插入排序?" << endl;
+    cout << "将对几个数据进行希尔排序?" << endl;
     int size;
     cin >> size;
     int* array = new int[size];
