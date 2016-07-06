@@ -71,7 +71,11 @@ void merge_array(int* array,int head, int mid,int tail,int* tmp)
     }
 
     int equal_head = head;
-    for (int i = 0; i <= tail; i++) {
+    
+    //这前测试发现 5 个数字下可以运行..超过 5 为就会出错..
+    //原来是 循环条件没弄对
+    //这里要注意 tmp 数组往 array 数组复制的时候,复制次数为 tail-head+1 
+    for (int i = 0; i <= tail - head; i++) {
         array[equal_head++] = tmp[i];
     }
 }
