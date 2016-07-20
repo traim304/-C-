@@ -29,7 +29,7 @@ private:
     int Depth(BinTreeNode<MyType> *r);
     int Leaf(BinTreeNode<MyType> *r);       //统计并返回叶子结点个数
     void Clear(BinTreeNode<MyType> *r);
-    void DisplayTreeeHelp(BinTreeNode<MyType> *r, int level);// 按树状形式显示以r为根的二叉树，level为层次数，可设根结点的层次数为1
+    void DisplayTreeHelp(BinTreeNode<MyType> *r, int level);// 按树状形式显示以r为根的二叉树，level为层次数，可设根结点的层次数为1
     
 public:
     void InitBiTree();      // 无参数的构造函数模板
@@ -74,15 +74,15 @@ void BinaryTree<MyType>::PreOrderHelp(BinTreeNode<MyType> *r) {
 }
 
 template <class MyType>
-void BinaryTree<MyType>:: DisplayTreeeHelp(BinTreeNode<MyType> *r, int level){
+void BinaryTree<MyType>:: DisplayTreeHelp(BinTreeNode<MyType> *r, int level){
     if(r != NULL)
-{     DisplayTreeHelp(r->rightChild, level + 1);
+{     DisplayTreeHelp(r->right_child, level + 1);
     //显示右子树
     cout << endl;	                //显示新行
     for(int i = 0; i < level - 1; i++)
         cout << " ";	     //确保在第level列显示结点
     cout << r->data;	    //显示结点
-    DisplayTreeHelp(r->leftChild, level + 1);
+    DisplayTreeHelp(r->left_child, level + 1);
 }
 }
 
